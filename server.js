@@ -11,7 +11,7 @@ const OAuth2 = google.auth.OAuth2;
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 require('dotenv').config();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 const { engine } = require('express-handlebars');
 app.engine('handlebars', engine({ extname: '.hbs', defaultLayout: "main"}));
