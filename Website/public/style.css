@@ -1,0 +1,346 @@
+* {
+    box-sizing: border-box;
+    font-family: opensans-bold sans-serif;
+}
+
+body, html {
+    background-color: #CCE5FF;
+    margin: 0;
+}
+
+
+header {
+    text-align:center;
+    background-color: transparent;
+    color: #000000;
+    list-style: none;
+    padding: 2px 20px 4px 20px;
+    border-bottom: 1px solid black;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 0;
+}
+
+ul {
+    padding: 10px 0 10px 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+header > ul > li {
+    display: inline-block;
+    padding: 0 20px 0 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+header > ul > li > a {
+    text-decoration: none;
+    color: #000000;
+}
+
+header > ul > li > a:hover {
+    color: #c1c1c1;
+}
+
+.first_section {
+    background-image: url('section3.jpg');
+    background-size: cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+}
+
+.main_area > .name {
+    text-align: center;
+    font-size: 85px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    margin: 0 0 20px 0;
+}
+main > .main_area > p {
+    margin: 0 20px 0 20px;
+}
+
+.main_area {
+    padding: 0 20px 0 20px;
+    text-align: center;
+}
+
+.main_area > .job_title > li {
+    display: inline-block;
+    list-style: none;
+    text-align: center;
+    padding: 0 5px 0 5px;
+    font-weight: 450;
+    font-size: 22px;
+}
+ul.job_title {
+    padding: 0;
+}
+
+.main_area > .icons > li {
+    display: inline-block;
+    list-style: none;
+    text-align: center;
+    padding: 0 25px 0 25px;
+    font-weight: 450;
+    font-size: 22px;
+}
+ul.icons {
+    padding: 40px;
+}
+
+.icons>li>a:hover {
+    filter: brightness(100);
+}
+
+.profile_pic {
+    padding: 2px;
+    border-radius: 50%;
+    float: left;
+}
+
+main {
+    text-align: center;
+}
+
+.main_area_about {
+    display: flex;
+}
+
+.main_area_about > .about_section {
+    font-style: normal;
+    background-color: white;
+    padding: 40px;
+    margin: 40px 20px 20px 100px;
+    border-radius: 10px;
+}
+
+blockquote p {
+    padding: 10px;
+    background: #eee;
+    border-radius: 5px;
+}
+
+blockquote p::before {
+    content: '\201C';
+}
+
+blockquote p::after {
+    content: '\201D';
+}
+
+.main_area_about > .about_section > .quotes {
+    float: right;
+    font-style: italic;
+    background-color: lightgray;
+    margin-right: 10px;
+}
+.quotes > aside {
+    padding: 25px 100px 25px 50px;
+}
+
+.about_section, .quotes {
+    width: 50%;
+}
+
+.about > p {
+    margin-top: 16px;
+    line-height: 24px;
+    margin-left: 12px;
+}
+
+.about:last-child {
+    margin-bottom: 0;
+}
+
+.table {
+    display: table;
+    border-spacing: 20px;
+    max-width: 100%;
+    margin-left:100px;
+    margin-right: 100px;
+    justify-content: center;
+}
+
+.caption {
+    display: table-caption;
+    font-size: xx-large;
+    text-align: center;
+    max-width: 100%;
+}
+
+.row {
+    display: table-row;
+    max-width: 100%;
+}
+
+.row > * {
+    display: table-cell;
+    text-align: center;
+}
+
+.row > span > img {
+    width: 100%;
+    height: auto;
+    max-width: 25vw;
+}
+
+footer {
+    background: #9fabad;
+    text-align: center;
+}
+
+footer > .footer > p{
+    padding: 40px 0px 40px 0px;
+    font-size: 18px;
+}
+
+.overlay > .btn {
+    position: relative;
+    background: transparent;
+    border: none;
+    top: -27px;
+    color: black;
+}
+
+.btn:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.about_section_two {
+    margin: 50px 90px 50px 90px;
+    justify-content: center;
+}
+
+.about_section_two > table {
+    justify-content: center;
+    display: inline-block;
+
+}
+
+.about_section_two > table > caption {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.about_section_two > tr, th, td, table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.about_section_two {
+    padding: 0px 40px 0px 40px;
+}
+
+input[type=text], input[type=tel]  {
+    width: 100%;
+}
+
+form {
+    display: inline-block;
+}
+
+#name-label::before {
+    content: "* ";
+    color: red;
+    margin-left:2px
+}
+
+#email-label::before {
+    content: "* ";
+    color: red;
+    margin-left:2px
+}
+
+.red_text {
+    color: red;
+    font-size: 14px;
+}
+
+
+.projects {
+    background: black;
+}
+
+.projects {
+    color: #CCE5FF;
+    padding: 40px;
+}
+
+form > table {
+    width: 55vw;
+}
+
+.github, .linkedin, .email-me {
+    display: inline-block;
+    width: 33%;
+    padding-top: 100px;
+}
+
+
+.contact-button {
+    background: transparent;
+    border: none;
+    color: black;
+}
+
+.contact-button:hover {
+    color: white;
+    cursor: pointer;
+}
+
+canvas {
+    border: 1px solid yellow;
+    visibility: hidden;
+}
+
+.projects > h5 {
+    visibility: hidden;
+}
+
+.projects > h1 {
+    color: yellow;
+}
+
+#restart-button, #stop-button {
+    visibility: hidden;
+}
+
+
+div.clickEffect {
+    position:fixed;
+    box-sizing: border-box;
+    border-style:solid;
+    border-color:#FFFFFF;
+    border-radius:50%;
+    animation:clickEffect 0.4s ease-out;
+    z-index:99999;
+}
+
+@keyframes clickEffect{
+    0%{
+    opacity:1;
+    width:0.5em; height:0.5em;
+    margin:-0.125em;
+    border-width:0.25em;
+    }
+100%{
+    opacity:0.2;
+    width:10em; height:10em;
+    margin:-5em;
+    border-width:0.03em;
+    }
+}
+
+
+
+
+
+
+

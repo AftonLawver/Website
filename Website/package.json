@@ -1,0 +1,32 @@
+{
+  "name": "htmldevelopment",
+  "version": "1.0.0",
+  "description": "Development",
+  "main": "../NodeJS/index.js",
+  "scripts": {
+    "start": "node Website/server.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AftonLawver/htmlDevelopment.git"
+  },
+  "author": "Afton Lawver",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AftonLawver/htmlDevelopment/issues"
+  },
+  "homepage": "https://github.com/AftonLawver/htmlDevelopment#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "browserify-fs": "^1.0.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "googleapis": "^105.0.0",
+    "nodemailer": "^6.7.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
