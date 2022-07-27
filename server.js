@@ -24,53 +24,16 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
 app.engine('handlebars', engine({ extname: '.hbs', defaultLayout: "main"}));
 app.set('view engine', 'handlebars');
 
-
-app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 
 // Set a static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
 
-// app.post('/', urlencodedParser, function(req, res){
-//     let data = req.body;
-//     let name = data['name'];
-//     let email = data['email'];
-//     let address = data['address'];
-//     let city = data['city'];
-//     let state = data['state'];
-//     let zipcode = data['zipcode'];
-//     let phone = data['phone'];
-//     let comments = data['comments'];
-//
-//     // save the data to the database
-//     const user = new User({
-//         name: name,
-//         email: email,
-//         address: address,
-//         city: city,
-//         state: state,
-//         zipcode: zipcode,
-//         phone: phone,
-//         comments: comments
-//     });
-//
-//     user.save()
-//         .then(() => {
-//             console.log("Saved data successfully.");
-//         })
-//         .catch((err) => {
-//             console.log(err);
-//         });
-//     res.end();
-// })
-
-app.post('/', (req, res) => {
-    let data = req.body
+app.post('/', urlencodedParser, function(req, res){
+    let data = req.body;
     let name = data['Name'];
     let email = data['Email'];
     let address = data['Address'];
@@ -93,13 +56,13 @@ app.post('/', (req, res) => {
     });
 
     user.save()
-        .then((result) => {
-            console.log(result);
+        .then(() => {
+            res.send({message: "Data saved to database successfully."});
         })
         .catch((err) => {
             console.log(err);
         });
-});
+})
 
 app.post('/send', (req, res) => {
 
@@ -155,11 +118,6 @@ app.post('/send', (req, res) => {
             })
         }else{
             transporter.close();
-            res.send({
-                message:'Email has been sent: check your inbox!'
-            })
-            res.send('Message sent successfully.');
-
             res.send({
                 message:'Email has been sent: check your inbox!'
             })

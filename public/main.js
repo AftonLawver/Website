@@ -42,7 +42,7 @@ function validateForm() {
 
         else {
             if (validatePhoneNumber()) {
-                // const data = getAllData();
+                const data = getAllData();
                 // console.log(data);
                 const options = {
                     method: 'POST',
@@ -50,7 +50,7 @@ function validateForm() {
                     headers: {
                         'Content-Type': "application/json"
                     },
-                    // body: JSON.stringify(data),
+                    body: JSON.stringify(data),
                 }
                 fetch('/', options).then(response => {
                     console.log(response);
@@ -63,7 +63,6 @@ function validateForm() {
             }
         }
     }
-
 }
 
 function sendEmail() {
