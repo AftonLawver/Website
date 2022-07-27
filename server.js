@@ -3,8 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const express = require("express");
 const app = express();
-const nodemailer = require('nodemailer');
-const exphbs = require('express-handlebars');
+const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser');
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
@@ -12,8 +11,17 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 require('dotenv').config();
 const PORT = process.env.PORT;
+const User = require('./models/user')
 
 const { engine } = require('express-handlebars');
+const mongoose = require('mongoose');
+
+// connect to mongodb
+const dbURI = process.env.DATABASE;
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
+    .then((result) => app.listen(process.env.DATABASE_PORT))
+    .catch((error) => console.log(error));
+
 app.engine('handlebars', engine({ extname: '.hbs', defaultLayout: "main"}));
 app.set('view engine', 'handlebars');
 
@@ -25,24 +33,40 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
 
-app.post('/update', (req, res) => {
-    let data = JSON.stringify(req.body, null, 2);
+app.post('/add-user', (req, res) => {
+    let data = req.body
+    let name = data['Name'];
+    let email = data['Email'];
+    let address = data['Address'];
+    let city = data['City'];
+    let state = data['State'];
+    let zipcode = data['Zipcode'];
+    let phone = data['Phone'];
+    let comments = data['Comments'];
 
-    // save the data to the data.json file
-    if (!fs.existsSync(path.join(__dirname, 'public/data.json'))) {
-        fs.closeSync(fs.openSync(path.join(__dirname, 'public/data.json'), 'w'));
-    }
-
-    fs.appendFile(path.join(__dirname, 'public/data.json'), data + ',\n', function (err){
-        if (err) throw err;
-        console.log('The data was appended.');
+    // save the data to the database
+    const user = new User({
+        name: name,
+        email: email,
+        address: address,
+        city: city,
+        state: state,
+        zipcode: zipcode,
+        phone: phone,
+        comments: comments
     });
 
-    res.end();
-
+    user.save()
+        .then((result) => {
+            res.send(result)
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 });
 
 app.post('/send', (req, res) => {

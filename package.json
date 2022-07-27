@@ -5,7 +5,6 @@
   "main": "../NodeJS/index.js",
   "scripts": {
     "start": "node Website/server.js"
-
   },
   "repository": {
     "type": "git",
@@ -18,15 +17,20 @@
   },
   "homepage": "https://github.com/AftonLawver/htmlDevelopment#readme",
   "dependencies": {
+    "@types/mongoose": "^5.11.97",
     "body-parser": "^1.20.0",
     "browserify-fs": "^1.0.0",
     "dotenv": "^16.0.1",
+    "events": "^3.3.0",
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
     "googleapis": "^105.0.0",
+    "mongodb": "^4.8.1",
+    "mongoose": "^6.5.0",
     "nodemailer": "^6.7.7"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
-  }
+  },
+  "keywords": []
 }

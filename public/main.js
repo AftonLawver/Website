@@ -33,7 +33,7 @@ function validateForm() {
                 body: JSON.stringify(data),
 
             }
-            fetch('/update', options).then(response => {
+            fetch('/add-user', options).then(response => {
                 console.log(response);
             });
             document.getElementById('paragraph').innerHTML = 'Data received.'
@@ -42,7 +42,7 @@ function validateForm() {
 
         else {
             if (validatePhoneNumber()) {
-                const data = getAllData();
+                // const data = getAllData();
                 // console.log(data);
                 const options = {
                     method: 'POST',
@@ -50,9 +50,9 @@ function validateForm() {
                     headers: {
                         'Content-Type': "application/json"
                     },
-                    body: JSON.stringify(data),
+                    // body: JSON.stringify(data),
                 }
-                fetch('/update', options).then(response => {
+                fetch('/add-user', options).then(response => {
                     console.log(response);
                 });
                 document.getElementById('paragraph').innerHTML = 'Data received.'
@@ -93,8 +93,8 @@ function getNameAndEmail() {
 }
 
 function getAllData() {
-    let date = new Date().toLocaleDateString();
-    let time = new Date().toLocaleTimeString();
+    // let date = new Date().toLocaleDateString();
+    // let time = new Date().toLocaleTimeString();
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
     let address = document.getElementById('address').value;
@@ -103,7 +103,7 @@ function getAllData() {
     let zipcode = document.getElementById('zipcode').value;
     let phone = document.getElementById('myform_phone').value;
     let comments = document.getElementById('comments').value;
-    return {Date: date, Time: time, Name: name, Email: email, Address: address, City: city, State: state, Zipcode: zipcode,
+    return {Name: name, Email: email, Address: address, City: city, State: state, Zipcode: zipcode,
         Phone: phone, Comments: comments};
 }
 
