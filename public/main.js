@@ -33,7 +33,7 @@ function validateForm() {
                 body: JSON.stringify(data),
 
             }
-            fetch('/add-user', options).then(response => {
+            fetch('/', options).then(response => {
                 console.log(response);
             });
             document.getElementById('paragraph').innerHTML = 'Data received.'
@@ -52,7 +52,7 @@ function validateForm() {
                     },
                     // body: JSON.stringify(data),
                 }
-                fetch('/add-user', options).then(response => {
+                fetch('/', options).then(response => {
                     console.log(response);
                 });
                 document.getElementById('paragraph').innerHTML = 'Data received.'

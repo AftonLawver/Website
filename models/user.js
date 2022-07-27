@@ -27,7 +27,7 @@ const userSchema = new Schema({
     comments: {
         type: String
     }
-}, { timestamps: true });
+}, { timestamps: true, versionKey: false });
 
 const User = mongoose.model('User', userSchema);
 // export the model so that we can use it elsewhere in the project.

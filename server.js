@@ -1,5 +1,4 @@
 
-const fs = require('fs');
 const path = require('path');
 const express = require("express");
 const app = express();
@@ -8,7 +7,7 @@ const bodyParser = require('body-parser');
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+const urlencodedParser = bodyParser.urlencoded({extended: false});
 require('dotenv').config();
 const PORT = process.env.PORT;
 const User = require('./models/user')
@@ -37,7 +36,40 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
 
-app.post('/add-user', (req, res) => {
+// app.post('/', urlencodedParser, function(req, res){
+//     let data = req.body;
+//     let name = data['name'];
+//     let email = data['email'];
+//     let address = data['address'];
+//     let city = data['city'];
+//     let state = data['state'];
+//     let zipcode = data['zipcode'];
+//     let phone = data['phone'];
+//     let comments = data['comments'];
+//
+//     // save the data to the database
+//     const user = new User({
+//         name: name,
+//         email: email,
+//         address: address,
+//         city: city,
+//         state: state,
+//         zipcode: zipcode,
+//         phone: phone,
+//         comments: comments
+//     });
+//
+//     user.save()
+//         .then(() => {
+//             console.log("Saved data successfully.");
+//         })
+//         .catch((err) => {
+//             console.log(err);
+//         });
+//     res.end();
+// })
+
+app.post('/', (req, res) => {
     let data = req.body
     let name = data['Name'];
     let email = data['Email'];
@@ -62,7 +94,7 @@ app.post('/add-user', (req, res) => {
 
     user.save()
         .then((result) => {
-            res.send(result)
+            console.log(result);
         })
         .catch((err) => {
             console.log(err);
