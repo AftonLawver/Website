@@ -59,7 +59,7 @@ function validateForm() {
                     },
                     body: JSON.stringify(data),
                 }
-                fetch('/add-user', options)
+                fetch('/', options)
                     .then(response => {
                     if (response.ok) {
                         document.getElementById('paragraph').innerHTML = 'Data received.'
@@ -69,7 +69,7 @@ function validateForm() {
                         console.log("Data not received by database successfully.");
                     }
                 }).catch(err => {
-                    console.log('Error with database receiving data.')
+                    console.log('Error with database receiving data.');
                 });
                 return true;
             }

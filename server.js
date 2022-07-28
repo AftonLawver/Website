@@ -40,6 +40,8 @@ app.post('/', function(req, res){
     let phone = data['Phone'];
     let comments = data['Comments'];
 
+
+
     // save the data to the database
     const user = new User({
         name: name,
@@ -117,9 +119,8 @@ app.post('/send', (req, res) => {
             transporter.close();
             res.sendStatus(200);
         }
-
-
     });
 });
+
 
 
