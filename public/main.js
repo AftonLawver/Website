@@ -39,6 +39,9 @@ function validateForm() {
                         document.getElementById('paragraph').innerHTML = 'Data received.'
                         console.log("Data received by database.");
                     }
+                    if (response.status == 422) {
+                        document.getElementById('paragraph-2').innerHTML = 'Data not appended to database.'
+                    }
                     else {
                         console.log("Data not received by database successfully.");
                     }
@@ -65,6 +68,9 @@ function validateForm() {
                         document.getElementById('paragraph').innerHTML = 'Data received.'
                         console.log("Data received by database.");
                     }
+                        if (response.status == 422) {
+                            document.getElementById('paragraph-2').innerHTML = 'Data not appended to database.'
+                        }
                     else {
                         console.log("Data not received by database successfully.");
                     }
@@ -96,6 +102,9 @@ function sendEmail() {
             if (response.ok) {
                 document.getElementById('paragraph-2').innerHTML = 'Email Sent. Check your inbox.';
                 console.log("Email sent successfully.");
+            }
+            if (response.status == 422) {
+                document.getElementById('paragraph').innerHTML = 'Email already in use.'
             }
             else {
                 console.log("Email not sent successfully.");

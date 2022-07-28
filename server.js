@@ -29,7 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
 
-app.post('/', function(req, res){
+app.post('/', async (req, res) => {
+
     let data = req.body;
     let name = data['Name'];
     let email = data['Email'];
@@ -40,86 +41,99 @@ app.post('/', function(req, res){
     let phone = data['Phone'];
     let comments = data['Comments'];
 
-
-
-    // save the data to the database
-    const user = new User({
-        name: name,
-        email: email,
-        address: address,
-        city: city,
-        state: state,
-        zipcode: zipcode,
-        phone: phone,
-        comments: comments
-    });
-
-    user.save()
-        .then(() => {
-            res.sendStatus(200);
-        })
-        .catch((err) => {
-            console.log(err);
+    const isNewUser = await User.isThisEmailInUse(email);
+    if(isNewUser) {
+        console.log('In new user if block..')
+        // save the data to the database
+        const user = new User({
+            name: name,
+            email: email,
+            address: address,
+            city: city,
+            state: state,
+            zipcode: zipcode,
+            phone: phone,
+            comments: comments
         });
+
+        user.save()
+            .then(() => {
+                res.sendStatus(200);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+    }
+    res.sendStatus(422);
+    console.log("Email in use already..")
+
 });
 
-app.post('/send', (req, res) => {
+app.post('/send', async (req, res) => {
 
     let name = req.body['Name'];
     let email = req.body['Email'];
 
-    // To send to me/owner of website
-    const output = `
-        <h4>Dear ${name},</h4>
-        <p>Thanks for your feedback!</p>
-        <br>
-        <p>Best,</p>
-        <p>Afton Lawver</p>
-    `
-    const myOAuth2Client = new OAuth2 (
-        process.env.OAUTH_CLIENTID,
-        process.env.OAUTH_CLIENT_SECRET,
-        "https://developers.google.com/oauthplayground"
-    );
+    const isNewUser = await User.isThisEmailInUse(email);
+    if(isNewUser) {
+        // To send to me/owner of website
+        const output = `
+            <h4>Dear ${name},</h4>
+            <p>Thanks for your feedback!</p>
+            <br>
+            <p>Best,</p>
+            <p>Afton Lawver</p>
+        `
+        const myOAuth2Client = new OAuth2(
+            process.env.OAUTH_CLIENTID,
+            process.env.OAUTH_CLIENT_SECRET,
+            "https://developers.google.com/oauthplayground"
+        );
 
-    myOAuth2Client.setCredentials({
-        refresh_token: process.env.OAUTH_REFRESH_TOKEN
-    });
+        myOAuth2Client.setCredentials({
+            refresh_token: process.env.OAUTH_REFRESH_TOKEN
+        });
 
-    const myAccessToken = myOAuth2Client.getAccessToken();
+        const myAccessToken = myOAuth2Client.getAccessToken();
 
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            type: 'OAuth2',
-            user: process.env.MAIL_USERNAME,
-            pass: process.env.MAIL_PASSWORD,
-            clientId: process.env.OAUTH_CLIENTID,
-            clientSecret: process.env.OAUTH_CLIENT_SECRET,
-            refreshToken: process.env.OAUTH_REFRESH_TOKEN,
-            access_token: myAccessToken
-        }
-    });
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                type: 'OAuth2',
+                user: process.env.MAIL_USERNAME,
+                pass: process.env.MAIL_PASSWORD,
+                clientId: process.env.OAUTH_CLIENTID,
+                clientSecret: process.env.OAUTH_CLIENT_SECRET,
+                refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+                access_token: myAccessToken
+            }
+        });
 
-    let mailOptions = {
-        from: 'lawverap25@gmail.com',
-        to: email,
-        subject: 'Thanks for visiting my website!',
-        text: 'Dear ' + name + ',\n\nThanks for your feedback!',
-        html: output
-    };
+        let mailOptions = {
+            from: 'lawverap25@gmail.com',
+            to: email,
+            subject: 'Thanks for visiting my website!',
+            text: 'Dear ' + name + ',\n\nThanks for your feedback!',
+            html: output
+        };
 
-    transporter.sendMail(mailOptions,function(err,result){
-        if(err){
-            console.log('Error with sending message.');
-            res.send({
-                message:err
-            })
-        }else{
-            transporter.close();
-            res.sendStatus(200);
-        }
-    });
+        transporter.sendMail(mailOptions, function (err, result) {
+            if (err) {
+                console.log('Error with sending message.');
+                res.send({
+                    message: err
+                })
+            } else {
+                transporter.close();
+                res.sendStatus(200);
+            }
+        });
+    }
+    else {
+        res.sendStatus(422);
+        console.log("Email in use already..");
+    }
 });
 
 
