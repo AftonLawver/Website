@@ -11,8 +11,6 @@ const urlencodedParser = bodyParser.urlencoded({extended: false});
 require('dotenv').config();
 const PORT = process.env.PORT;
 const User = require('./models/user')
-
-const { engine } = require('express-handlebars');
 const mongoose = require('mongoose');
 
 // connect to mongodb
@@ -21,7 +19,6 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
     .then((result) => app.listen(process.env.DATABASE_PORT))
     .catch((error) => console.log(error));
 
-app.engine('handlebars', engine({ extname: '.hbs', defaultLayout: "main"}));
 app.set('view engine', 'handlebars');
 
 app.use(bodyParser.json());
@@ -32,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
 
-app.post('/', urlencodedParser, function(req, res){
+app.post('/', function(req, res){
     let data = req.body;
     let name = data['Name'];
     let email = data['Email'];
@@ -57,12 +54,12 @@ app.post('/', urlencodedParser, function(req, res){
 
     user.save()
         .then(() => {
-            res.send({message: "Data saved to database successfully."});
+            res.sendStatus(200);
         })
         .catch((err) => {
             console.log(err);
         });
-})
+});
 
 app.post('/send', (req, res) => {
 
@@ -118,11 +115,9 @@ app.post('/send', (req, res) => {
             })
         }else{
             transporter.close();
-            res.send({
-                message:'Email has been sent: check your inbox!'
-            })
+            res.sendStatus(200);
         }
-        res.end();
+
 
     });
 });

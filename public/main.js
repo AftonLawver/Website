@@ -33,13 +33,20 @@ function validateForm() {
                 body: JSON.stringify(data),
 
             }
-            fetch('/', options).then(response => {
-                console.log(response);
-            });
-            document.getElementById('paragraph').innerHTML = 'Data received.'
-            return true
+            fetch('/', options)
+                .then(response => {
+                    if (response.ok) {
+                        document.getElementById('paragraph').innerHTML = 'Data received.'
+                        console.log("Data received by database.");
+                    }
+                    else {
+                        console.log("Data not received by database successfully.");
+                    }
+                }).catch(err => {
+                console.log('Error with database receiving data.')
+            })
+            return true;
         }
-
         else {
             if (validatePhoneNumber()) {
                 const data = getAllData();
@@ -52,10 +59,18 @@ function validateForm() {
                     },
                     body: JSON.stringify(data),
                 }
-                fetch('/', options).then(response => {
-                    console.log(response);
+                fetch('/add-user', options)
+                    .then(response => {
+                    if (response.ok) {
+                        document.getElementById('paragraph').innerHTML = 'Data received.'
+                        console.log("Data received by database.");
+                    }
+                    else {
+                        console.log("Data not received by database successfully.");
+                    }
+                }).catch(err => {
+                    console.log('Error with database receiving data.')
                 });
-                document.getElementById('paragraph').innerHTML = 'Data received.'
                 return true;
             }
             else {
@@ -76,24 +91,27 @@ function sendEmail() {
         },
         body: JSON.stringify(data)
     };
-    fetch('/send', options).then(response => {
-        console.log('Email sent successfully.');
-        document.getElementById('paragraph-2').innerHTML = 'Email Sent. Check your inbox.'
-    }).catch(err =>
-        console.log(err)
-    );
+    fetch('/send', options)
+        .then(response => {
+            if (response.ok) {
+                document.getElementById('paragraph-2').innerHTML = 'Email Sent. Check your inbox.';
+                console.log("Email sent successfully.");
+            }
+            else {
+                console.log("Email not sent successfully.");
+            }
+        }).catch(err => {
+            console.log('Error')
+    });
 }
 
 function getNameAndEmail() {
-
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
     return { Name: name, Email: email};
 }
 
 function getAllData() {
-    // let date = new Date().toLocaleDateString();
-    // let time = new Date().toLocaleTimeString();
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
     let address = document.getElementById('address').value;
