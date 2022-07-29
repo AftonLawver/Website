@@ -2,7 +2,7 @@
 const path = require('path');
 const express = require("express");
 const app = express();
-const nodemailer = require('nodemailer')
+const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
@@ -10,8 +10,9 @@ app.use(express.json());
 const urlencodedParser = bodyParser.urlencoded({extended: false});
 require('dotenv').config();
 const PORT = process.env.PORT;
-const User = require('./models/user')
+const User = require('./models/user');
 const mongoose = require('mongoose');
+const {MongoClient} = require('mongodb');
 
 // connect to mongodb
 const dbURI = process.env.DATABASE;
@@ -28,7 +29,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
-
 app.post('/', async (req, res) => {
 
     let data = req.body;
@@ -41,8 +41,8 @@ app.post('/', async (req, res) => {
     let phone = data['Phone'];
     let comments = data['Comments'];
 
-    const isNewUser = await User.isThisEmailInUse(email);
-    if(isNewUser) {
+    // const isNewUser = await User.isThisEmailInUse(email);
+    // if(isNewUser) {
         console.log('In new user if block..')
         // save the data to the database
         const user = new User({
@@ -55,18 +55,22 @@ app.post('/', async (req, res) => {
             phone: phone,
             comments: comments
         });
+    const client = new MongoClient(dbURI);
+    const database = client.db("website-info");
+    const users = database.collection("users");
+    const estimate = users.estimatedDocumentCount();
 
         user.save()
             .then(() => {
-                res.sendStatus(200);
+                res.send({message: estimate});
             })
             .catch((err) => {
                 console.log(err);
             });
 
-    }
-    res.sendStatus(422);
-    console.log("Email in use already..")
+    // }
+    // res.sendStatus(422);
+    // console.log("Email in use already..")
 
 });
 
@@ -75,9 +79,10 @@ app.post('/send', async (req, res) => {
     let name = req.body['Name'];
     let email = req.body['Email'];
 
-    const isNewUser = await User.isThisEmailInUse(email);
-    if(isNewUser) {
-        // To send to me/owner of website
+
+
+    // const isNewUser = await User.isThisEmailInUse(email);
+    // if(isNewUser) {
         const output = `
             <h4>Dear ${name},</h4>
             <p>Thanks for your feedback!</p>
@@ -126,14 +131,24 @@ app.post('/send', async (req, res) => {
                 })
             } else {
                 transporter.close();
-                res.sendStatus(200);
+                const client = new MongoClient(dbURI);
+                const database = client.db("website-info");
+                const users = database.collection("users");
+                const estimate = users.estimatedDocumentCount()
+                    .then((estimate) => {
+                        // console.log('number of documents: ' + estimate);
+                        const data = req.body;
+
+                        res.json({status: 200, documents: estimate });
+                    })
+
             }
         });
-    }
-    else {
-        res.sendStatus(422);
-        console.log("Email in use already..");
-    }
+    // }
+    // else {
+    //     res.sendStatus(422);
+    //     console.log("Email in use already..");
+    // }
 });
 
 

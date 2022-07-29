@@ -1,4 +1,28 @@
 
+function openPopUp(documents) {
+
+
+    let popup = window.open('popup.html')
+    popup.onload = function() {
+        const lastDigitString = String(documents).slice(-1);
+        const lastDigitInt = Number(lastDigitString);
+        if (lastDigitInt === 1) {
+            popup.document.getElementById('number-suffix').innerHTML = 'st';
+        }
+        else if (lastDigitInt === 2) {
+            popup.document.getElementById('number-suffix').innerHTML = 'nd';
+        }
+        else if (lastDigitInt === 3) {
+            popup.document.getElementById('number-suffix').innerHTML = 'rd';
+        }
+        else {
+            popup.document.getElementById('number-suffix').innerHTML = 'th';
+        }
+
+        popup.document.getElementById('number').innerHTML = documents;
+    }
+}
+
 let btn = document.getElementById('formSubmit');
 btn.addEventListener('click', () => {
     let p = new Promise((resolve, reject) => {
@@ -39,9 +63,9 @@ function validateForm() {
                         document.getElementById('paragraph').innerHTML = 'Data received.'
                         console.log("Data received by database.");
                     }
-                    if (response.status == 422) {
-                        document.getElementById('paragraph-2').innerHTML = 'Data not appended to database.'
-                    }
+                    // if (response.status == 422) {
+                    //     document.getElementById('paragraph-2').innerHTML = 'Data not appended to database.'
+                    // }
                     else {
                         console.log("Data not received by database successfully.");
                     }
@@ -68,9 +92,9 @@ function validateForm() {
                         document.getElementById('paragraph').innerHTML = 'Data received.'
                         console.log("Data received by database.");
                     }
-                        if (response.status == 422) {
-                            document.getElementById('paragraph-2').innerHTML = 'Data not appended to database.'
-                        }
+                    // if (response.status == 422) {
+                    //     document.getElementById('paragraph-2').innerHTML = 'Data not appended to database.'
+                    // }
                     else {
                         console.log("Data not received by database successfully.");
                     }
@@ -98,21 +122,35 @@ function sendEmail() {
         body: JSON.stringify(data)
     };
     fetch('/send', options)
-        .then(response => {
-            if (response.ok) {
-                document.getElementById('paragraph-2').innerHTML = 'Email Sent. Check your inbox.';
-                console.log("Email sent successfully.");
-            }
-            if (response.status == 422) {
-                document.getElementById('paragraph').innerHTML = 'Email already in use.'
-            }
-            else {
-                console.log("Email not sent successfully.");
-            }
-        }).catch(err => {
-            console.log('Error')
-    });
+        .then((response) => response.json())
+        .then((data) => {
+            let numOfDocuments = data['documents'];
+            console.log(numOfDocuments);
+            openPopUp(numOfDocuments);
+        })
+
+            // if (response.ok) {
+            //     document.getElementById('paragraph-2').innerHTML = 'Email Sent. Check your inbox.';
+            //     console.log("Email sent successfully.");
+            //
+            //     console.log(response);
+            //     // openPopUp();
+            //
+            // }
+            // if (response.status == 422) {
+            //     document.getElementById('paragraph').innerHTML = 'Email already in use.'
+            // }
+            // else {
+            //     console.log("Email not sent successfully.");
+            // }
+
+
+            // }).catch(err => {
+            //     console.log('Error');
+
+
 }
+
 
 function getNameAndEmail() {
     let name = document.getElementById('name').value;

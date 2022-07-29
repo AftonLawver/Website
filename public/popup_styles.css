@@ -1,0 +1,42 @@
+html {
+    height: 100%;
+}
+body {
+    margin:0;
+    height: 100%;
+    background: linear-gradient(black, rgb(139, 139, 139)) no-repeat fixed;
+}
+
+section {
+    background: white;
+    color: black;
+    border-radius: 1em;
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+}
+
+section > h1, p {
+    text-align: center;
+}
+
+.right {
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    vertical-align: middle;
+
+
+}
+
+.left {
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    vertical-align: middle;
+
+}
