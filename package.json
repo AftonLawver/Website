@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/AftonLawver/htmlDevelopment#readme",
   "dependencies": {
+    "@angular/cli": "^14.1.1",
     "@types/mongoose": "^5.11.97",
     "body-parser": "^1.20.0",
     "browserify-fs": "^1.0.0",
