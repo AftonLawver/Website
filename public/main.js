@@ -1,9 +1,11 @@
 
 
-
+const app = angular.module('myapp', []);
+app.controller('angularctrl', function ($scope) {
+$scope.name = "";
+});
 
 function openPopUp(documents) {
-
 
     let popup = window.open('popup.html')
     popup.onload = function() {
@@ -47,7 +49,7 @@ btn.addEventListener('click', () => {
 
 function validateForm() {
     if (validateName() && validateEmail()) {
-        let phone = document.getElementById('myform_phone');
+        let phone = document.getElementById('phone');
         if (phone.value !== null && phone.value === "") {
             const data = getAllData();
             // console.log(data);
@@ -168,7 +170,7 @@ function getAllData() {
     let city = document.getElementById('city').value;
     let state = document.getElementById('state').value;
     let zipcode = document.getElementById('zipcode').value;
-    let phone = document.getElementById('myform_phone').value;
+    let phone = document.getElementById('phone').value;
     let comments = document.getElementById('comments').value;
     return {Name: name, Email: email, Address: address, City: city, State: state, Zipcode: zipcode,
         Phone: phone, Comments: comments};
@@ -200,10 +202,10 @@ function validateEmail() {
 
 function validatePhoneNumber() {
     var regPhone = /^[0-9]{3}[-][0-9]{3}[-][0-9]{4}$/;
-    var phoneNumber = document.getElementById("myform_phone").value;
+    var phoneNumber = document.getElementById("phone").value;
     if(!regPhone.test(phoneNumber)) {
         alert("Please enter a valid phone number.");
-        document.getElementById("myform_phone").focus();
+        document.getElementById("phone").focus();
         return false;
     }else {
         return true;

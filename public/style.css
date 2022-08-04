@@ -79,6 +79,7 @@ main > .main_area > p {
     font-weight: 450;
     font-size: 22px;
 }
+
 ul.job_title {
     padding: 0;
 }
@@ -239,14 +240,6 @@ footer > .footer > p{
     padding: 0px 40px 0px 40px;
 }
 
-input[type=text], input[type=tel]  {
-    width: 100%;
-}
-
-form {
-    display: inline-block;
-}
-
 .projects {
     background: black;
 }
@@ -254,10 +247,6 @@ form {
 .projects {
     color: #CCE5FF;
     padding: 40px;
-}
-
-form > table {
-    width: 55vw;
 }
 
 .github, .linkedin, .email-me {
@@ -320,6 +309,87 @@ div.clickEffect {
     border-width:0.03em;
     }
 }
+
+fieldset {
+    margin: 2em 8em;
+    padding: 1em 2em;
+    border: solid 2px #696969;
+    border-radius: 6px;
+    min-width: 200px;
+    text-align: left;
+}
+
+legend {
+    font-size: 1.25em;
+    padding: 0 .25em;
+    color: #696969;
+}
+
+label {
+    display: block;
+    margin-top: 1em;
+    padding: 0.5em 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    }
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+input {
+    padding: .5em;
+    border: solid 1px #696969;
+    padding: .5rem;
+    font-size: 18px;
+    border-radius: 3px;
+
+}
+
+input[type="email"], input[type="text"], input[type="tel"] {
+    width: 80%;
+}
+
+textarea {
+    min-height: 8em;
+    min-width: 100%;
+    padding: 0.5em;
+    border: solid 1px #696969;
+}
+
+#formSubmit, input[type="reset"] {
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    background-color: #696969;
+    color: #fff;
+    font-size: 0.8em;
+    font-family: opensans-bold sans-serif;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+input[type="reset"]:hover {
+    background-color: #c1c1c1;
+}
+
+#formSubmit:hover {
+    background-color: #c1c1c1;
+}
+
+@media screen and (min-width: 430px) {
+    legend {
+        font-size: 1.75em;
+    }
+
+    fieldset {
+        width: 40%;
+        min-width: 450px;
+        margin: auto;
+    }
+}
+
 
 
 
