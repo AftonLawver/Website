@@ -1,8 +1,8 @@
 
-
 const app = angular.module('myapp', []);
+
 app.controller('angularctrl', function ($scope) {
-$scope.name = "";
+
 });
 
 function openPopUp(documents) {
@@ -65,7 +65,6 @@ function validateForm() {
             fetch('/', options)
                 .then(response => {
                     if (response.ok) {
-                        document.getElementById('paragraph').innerHTML = 'Data received.'
                         console.log("Data received by database.");
                     }
                     // if (response.status == 422) {
@@ -94,7 +93,6 @@ function validateForm() {
                 fetch('/', options)
                     .then(response => {
                     if (response.ok) {
-                        document.getElementById('paragraph').innerHTML = 'Data received.'
                         console.log("Data received by database.");
                     }
                     // if (response.status == 422) {
@@ -133,27 +131,6 @@ function sendEmail() {
             console.log(numOfDocuments);
             openPopUp(numOfDocuments);
         })
-
-            // if (response.ok) {
-            //     document.getElementById('paragraph-2').innerHTML = 'Email Sent. Check your inbox.';
-            //     console.log("Email sent successfully.");
-            //
-            //     console.log(response);
-            //     // openPopUp();
-            //
-            // }
-            // if (response.status == 422) {
-            //     document.getElementById('paragraph').innerHTML = 'Email already in use.'
-            // }
-            // else {
-            //     console.log("Email not sent successfully.");
-            // }
-
-
-            // }).catch(err => {
-            //     console.log('Error');
-
-
 }
 
 

@@ -6,7 +6,7 @@
         <meta charset = "utf-8" />
         <link rel="icon" href="afton.png">
         <script src="https://kit.fontawesome.com/87d5d5aa71.js" crossorigin="anonymous"></script>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     </head>
     <body>
         <div class="first_section">
@@ -326,8 +326,6 @@
             <br>
             <br>
             <div class="contact">
-                <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-
                 <h2 id="contactHeader">
                     Contact Me
                 </h2>
@@ -336,7 +334,7 @@
                     <fieldset>
                         <legend>Contact Me</legend>
                         <label for="name" id="name-label">Name</label>
-                        <input ng-model="name" id="name" type="text" name="name" required/>
+                        <input ng-model="name" id="name" type="text" name="name" placeholder="John Doe" required/>
 
                         <div style="color:red" ng-show="myForm.name.$dirty && myForm.name.$invalid">
                         <span ng-show="myForm.name.$error.required">First and Last name are required.</span>
@@ -363,8 +361,7 @@
                         <input id='zipcode' type="text" name="zipcode" ng-model="zipcode"/>
 
                         <label for="phone">Phone </label>
-                        <input type="tel" name="phone" id="phone" placeholder="e.g. 999-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" ng-model="phone"/>
-
+                        <input type="tel" name="phone" id="phone" placeholder="123-456-7899" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" ng-model="phone"/>
 
                         <label for="comments" id="comments-label">Comments</label>
                         <textarea id='comments' type="text" name="comments" ng-model="comments"/></textarea>
@@ -374,14 +371,6 @@
                             <input type="reset" name="clear" class="button" value="Clear Form"/>
                         </p>
                     </fieldset>
-
-                    <p id="paragraph">
-
-                    </p>
-                    <p id="paragraph-2">
-
-                    </p>
-
                 </form>
                 <div class="contact-space-icons">
                     <div class="email-me">
@@ -406,7 +395,6 @@
                         <br>
                     </div>
                 </div>
-
             </div>
             <br>
             <br>
@@ -434,6 +422,3 @@
         </div>
     </footer>
 </html>
-
-<!--Things to do-->
-<!--Insert Resume-->
