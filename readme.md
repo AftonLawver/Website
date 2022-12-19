@@ -14,7 +14,6 @@ Domain: **aftonlawver.com**
 ### Features in Progress
 - Creating a new more interactive game, that holds leaderboard scores in database.
 - Allowing only new users to submit the form.
-- Adding a grid that shows projects ive worked on/made.
 
 ### File Structure
 - I have many directories that my website files are kept in: 
