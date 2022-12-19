@@ -1,0 +1,136 @@
+
+
+h2, h3, h4, h5, h6 {
+    font-family:"Palatino Linotype";
+    font-weight: normal;
+}
+
+body {
+    font-family:"Palatino Linotype";
+    margin-left:100px;
+    margin-right:100px;
+    color: #111;
+}
+header > h1 {
+    color:#000;
+
+}
+
+h1 {
+    margin-bottom:5px;
+}
+
+p {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+body > header > h1 > a{
+    text-decoration: none;
+    color: #418DC8;
+    font-size: 36px;
+    font-family: Verdana;
+    
+}
+
+body > header h2{
+    margin-top: 5px;
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+span a{
+    text-decoration: none;
+}
+
+.inline{
+    display: inline;
+}
+
+ul, ol {
+    padding-left: 2em;
+  }
+
+body > header, body > nav, body > article, body > footer {
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 1em transparent solid;
+    border-right: 1em transparent solid;
+    max-width: 980px;
+}
+
+nav > ul {
+    font-family:"Palatino Linotype";
+    margin: 0em;
+    padding: 0em;
+    list-style-type: none;
+}
+
+nav > ul > li {
+    position: relative;
+    top: 1.5em;
+}
+
+nav > ul > li > a {
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: left;
+}
+
+nav > ul time {
+    display: block;
+    font-size: .8em;
+}
+
+nav > ul p {
+    margin-top: 8px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+sup {
+    vertical-align: super;
+}
+
+sub {
+    vertical-align: sub;
+}
+
+a {
+    color: #475bce;
+    text-decoration: none;
+}
+
+body > footer {
+    font-size: .8em;
+    margin-top: 5em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+article > header {
+    text-align: center;
+  }
+  
+article > header > h1 {
+    padding: 1px;
+    font-size: 30px;
+}
+
+article > header > h2 {
+    margin: 0.1px;
+    font-size: 18px;
+}
+
+article > header > h3 {
+    margin: 0.1px;
+    font-size: 18px;
+}
+
+footer, figcaption {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+.content h3 {
+    font-weight: bold;
+}
