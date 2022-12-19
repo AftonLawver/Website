@@ -7,14 +7,14 @@ Domain: **aftonlawver.com**
 - My website is a single-paged website. It has all sections listed at the top which are clickable.
 
 ### Features
-- Allow users to play a shape transformation game within the projects section of my website.
 - Allows users to submit feedback/contact information within the contact section of my website.
 - Gives users the chance to connect with me by visiting my LinkedIn or GitHub page.
+- Gives users the chance to read more about who I am and what my interests are. 
 
 ### Features in Progress
 - Creating a new more interactive game, that holds leaderboard scores in database.
 - Allowing only new users to submit the form.
-- Adding information about my resume.
+- Allow resume items (like email and website to be clickable).
 - Adding a grid that shows projects ive worked on/made.
 - Adding a blog, that users can visit from my website. 
 
