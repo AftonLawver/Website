@@ -391,15 +391,43 @@ input[type="reset"]:hover {
 }
 
 @media screen and (min-width: 430px) {
-    legend {
-        font-size: 1.75em;
-    }
-
     fieldset {
         width: 40%;
         min-width: 450px;
         margin: auto;
     }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 5vh;
+    column-gap: 5vw;
+    padding-left: 15vw;
+    padding-right: 15vw;
+}
+
+.grid-container > .grid-item {
+    color: #111111;
+    border: 5px outset #c1c1c1;
+    min-height: 30vh;
+    justify-content: center;
+    background-color: #CCE5FF;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 26px;
+    transition: 0.3s ease;
+}
+
+.grid-container > .grid-item:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+}
+
+.technologies-used {
+    font-size: 16px;
+    padding-botom: 5px;
 }
 
 
