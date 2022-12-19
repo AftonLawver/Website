@@ -16,7 +16,6 @@ Domain: **aftonlawver.com**
 - Allowing only new users to submit the form.
 - Allow resume items (like email and website to be clickable).
 - Adding a grid that shows projects ive worked on/made.
-- Adding a blog, that users can visit from my website. 
 
 ### File Structure
 - I have many directories that my website files are kept in: 
