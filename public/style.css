@@ -249,9 +249,9 @@ footer > .footer > p{
     padding: 40px;
 }
 
-.github, .linkedin, .email-me {
+.github, .linkedin, .email-me, .view-resume {
     display: inline-block;
-    width: 33%;
+    width: 22%;
     padding-top: 100px;
 }
 

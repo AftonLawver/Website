@@ -144,11 +144,6 @@ app.post('/send', async (req, res) => {
 
             }
         });
-    // }
-    // else {
-    //     res.sendStatus(422);
-    //     console.log("Email in use already..");
-    // }
 });
 
 
