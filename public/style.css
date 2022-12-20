@@ -130,7 +130,7 @@ main {
     font-style: normal;
     background-color: white;
     padding: 40px;
-    margin: 40px 20px 20px 100px;
+    margin: 40px 100px 20px 100px;
     border-radius: 10px;
 }
 
@@ -153,13 +153,6 @@ blockquote p::after {
     font-style: italic;
     background-color: lightgray;
     margin-right: 10px;
-}
-.quotes > aside {
-    padding: 25px 100px 25px 50px;
-}
-
-.about_section, .quotes {
-    width: 50%;
 }
 
 .about > p {
