@@ -1,4 +1,3 @@
-
 const path = require('path');
 const express = require("express");
 const app = express();
@@ -14,6 +13,7 @@ const User = require('./models/user');
 const mongoose = require('mongoose');
 const {MongoClient} = require('mongodb');
 
+
 // connect to mongodb
 const dbURI = process.env.DATABASE;
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
@@ -23,12 +23,26 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
 app.set('view engine', 'handlebars');
 
 app.use(bodyParser.json());
-
 // Set a static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
+// app.get('/', async(req, res) => {
+//     let data = req.body;
+//     let email = data['Email'];
+//
+//     const client = new MongoClient(dbURI);
+//     const database = client.db("website-info");
+//     const users = database.collection("users");
+//     const emailExists = users.findOne(
+//         { email: email }
+//     );
+//     console.log(emailExists);
+//     res.send({message: emailExists});
+// });
+
+// Saving the users data to the database.
 app.post('/', async (req, res) => {
 
     let data = req.body;
@@ -41,37 +55,29 @@ app.post('/', async (req, res) => {
     let phone = data['Phone'];
     let comments = data['Comments'];
 
-    // const isNewUser = await User.isThisEmailInUse(email);
-    // if(isNewUser) {
-        console.log('In new user if block..')
-        // save the data to the database
-        const user = new User({
-            name: name,
-            email: email,
-            address: address,
-            city: city,
-            state: state,
-            zipcode: zipcode,
-            phone: phone,
-            comments: comments
-        });
     const client = new MongoClient(dbURI);
     const database = client.db("website-info");
     const users = database.collection("users");
     const estimate = users.estimatedDocumentCount();
 
-        user.save()
-            .then(() => {
-                res.send({message: estimate});
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-
-    // }
-    // res.sendStatus(422);
-    // console.log("Email in use already..")
-
+    // save the data to the database
+    const user = new User({
+        name: name,
+        email: email,
+        address: address,
+        city: city,
+        state: state,
+        zipcode: zipcode,
+        phone: phone,
+        comments: comments
+    });
+    user.save()
+        .then(() => {
+            res.send({message: estimate});
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 });
 
 app.post('/send', async (req, res) => {
@@ -79,16 +85,10 @@ app.post('/send', async (req, res) => {
     let name = req.body['Name'];
     let email = req.body['Email'];
 
-
-
-    // const isNewUser = await User.isThisEmailInUse(email);
-    // if(isNewUser) {
         const output = `
             <h4>Dear ${name},</h4>
             <p>Thanks for your feedback!</p>
-            <br>
-            <p>Best,</p>
-            <p>Afton Lawver</p>
+            <p>Best,/nAfton Lawver</p>
         `
         const myOAuth2Client = new OAuth2(
             process.env.OAUTH_CLIENTID,
@@ -119,7 +119,7 @@ app.post('/send', async (req, res) => {
             from: 'lawverap25@gmail.com',
             to: email,
             subject: 'Thanks for visiting my website!',
-            text: 'Dear ' + name + ',\n\nThanks for your feedback!',
+            text: 'Dear ' + name + ',\nThanks for your feedback!',
             html: output
         };
 
