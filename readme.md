@@ -12,8 +12,7 @@ Domain: **aftonlawver.com**
 - Gives users the chance to read more about who I am and what my interests are. 
 
 ### Features in Progress
-- Creating a new more interactive game, that holds leaderboard scores in database.
-- Allowing only new users to submit the form.
+- None at the moment.
 
 ### File Structure
 - I have many directories that my website files are kept in: 
