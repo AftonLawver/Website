@@ -216,6 +216,11 @@ function scrollToTop() {
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
+function scrollToSection(section) {
+    let scrollDiv = document.getElementById(section).offsetTop;
+    window.scrollTo({top: scrollDiv, behavior: 'smooth'});
+}
+
 
 
 
