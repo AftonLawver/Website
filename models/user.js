@@ -21,7 +21,7 @@ const userSchema = new Schema({
     zipcode: {
         type: String
     },
-    telephone: {
+    phone: {
         type: String
     },
     comments: {
