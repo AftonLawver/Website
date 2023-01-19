@@ -6,14 +6,12 @@ app.controller('angularctrl', function ($scope) {
 });
 
 function openPopUp(documents) {
-
     let popup = window.open('popup.html')
     popup.onload = function() {
         const lastDigitString = String(documents).slice(-1);
         const lastDigitInt = Number(lastDigitString);
-
         const secondToLastDigitString = String(documents).slice(-2);
-        const secondToLastDigitInt = Number(lastDigitString);
+        const secondToLastDigitInt = Number(secondToLastDigitString);
         if (secondToLastDigitInt === 1) {
             popup.document.getElementById('number-suffix').innerHTML = 'th';
         }
@@ -46,13 +44,11 @@ btn.addEventListener('click', () => {
             reject();
         }
     })
-
     p.then(() => {
         console.log('Sending Email..');
         sendEmail();
     }).catch(error => console.log(error));
 });
-
 
 function isUserNew() {
     const data = getAllData();
@@ -156,7 +152,6 @@ function sendEmail() {
         })
 }
 
-
 function getNameAndEmail() {
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
@@ -177,8 +172,8 @@ function getAllData() {
 }
 
 function validateName() {
-    var regName = /^[a-zA-Z]+ [a-zA-Z]+\s{0,}$/;
-    var name = document.getElementById('name').value;
+    const regName = /^[a-zA-Z]+ [a-zA-Z]+\s{0,}$/;
+    const name = document.getElementById('name').value;
     if(!regName.test(name)) {
         alert('Please enter your full name (first & last name).');
         document.getElementById('name').focus();
@@ -189,8 +184,8 @@ function validateName() {
 }
 
 function validateEmail() {
-    var regEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}\s{0,}$/;
-    var emailAddress = document.getElementById('email').value;
+    const regEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}\s{0,}$/;
+    const emailAddress = document.getElementById('email').value;
     if (!regEmail.test(emailAddress)) {
         alert("Please enter a valid email address.");
         document.getElementById('email').focus();
