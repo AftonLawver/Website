@@ -216,6 +216,29 @@ function scrollToSection(section) {
     window.scrollTo({top: scrollDiv, behavior: 'smooth'});
 }
 
+function clickProject(projectNumber) {
+    if (projectNumber === 1) {
+        let element = document.getElementsByClassName("grid-item grid-item-1");
+        location.href='https://github.com/AftonLawver/PomodoroTimer';
+    }
+    else if (projectNumber === 2) {
+        let element = document.getElementsByClassName("grid-item grid-item-2");
+        location.href='https://github.com/piotrbaranski93/TerminalAI';
+    }
+    if (projectNumber === 3) {
+        let element = document.getElementsByClassName("grid-item grid-item-3");
+        location.href='https://github.com/AftonLawver/ChatRoom';
+    }
+    else if (projectNumber === 4) {
+        let element = document.getElementsByClassName("grid-item grid-item-4");
+        location.href='https://github.com/AftonLawver/Website';
+    }
+    if (projectNumber === 5) {
+        let element = document.getElementsByClassName("grid-item grid-item-5");
+        location.href='https://github.com/AftonLawver/ZooManagmentSystem';
+    }
+}
+
 
 
 

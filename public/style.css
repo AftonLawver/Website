@@ -21,6 +21,10 @@ header {
     margin: 0;
 }
 
+#aboutHeader, #projectsHeader, #contactHeader {
+    font-size: 35px;
+}
+
 ul {
     padding: 10px 0 10px 0;
     list-style-type: none;
@@ -56,11 +60,6 @@ header > ul > li > a:not([href]):hover, a:hover {
     color: #c1c1c1;
     cursor: pointer;
 }
-
-/*header > ul > li > a:hover {*/
-/*    color: #c1c1c1;*/
-/*    cursor: pointer;*/
-/*}*/
 
 .first_section {
     background-image: url('section3.jpg');
@@ -422,6 +421,7 @@ input[type="reset"]:hover {
     transform: scale(1.1);
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
+    cursor: pointer;
 }
 
 .technologies-used {
