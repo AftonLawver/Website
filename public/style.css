@@ -261,7 +261,13 @@ footer > .footer > p{
 
 .github, .linkedin, .email-me, .view-resume {
     display: inline-block;
-    width: 22%;
+    width: 17%;
+    padding-top: 100px;
+}
+
+.instagram {
+    display: inline-block;
+    width: 17%;
     padding-top: 100px;
 }
 
