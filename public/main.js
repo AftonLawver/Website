@@ -223,11 +223,11 @@ function clickProject(projectNumber) {
     }
     else if (projectNumber === 2) {
         let element = document.getElementsByClassName("grid-item grid-item-2");
-        location.href='https://github.com/piotrbaranski93/TerminalAI';
+        location.href='https://github.com/AftonLawver/Tasker';
     }
     if (projectNumber === 3) {
         let element = document.getElementsByClassName("grid-item grid-item-3");
-        location.href='https://github.com/AftonLawver/ChatRoom';
+        location.href='https://github.com/AftonLawver/NodeChat';
     }
     else if (projectNumber === 4) {
         let element = document.getElementsByClassName("grid-item grid-item-4");
