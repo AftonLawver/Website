@@ -1,4 +1,4 @@
-![Logo of the Project](public/afton.png)
+![Logo of the Project](public/aftonlogo.png)
 
 ---
 # Afton Lawver's Website

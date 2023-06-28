@@ -11,7 +11,7 @@ body, html {
 
 header {
     text-align:center;
-    background-color: transparent;
+    background-color: white;
     color: #000000;
     list-style: none;
     padding: 2px 20px 4px 20px;
@@ -36,6 +36,19 @@ header > ul > li {
     padding: 0 20px 0 20px;
     font-size: 16px;
     font-weight: bold;
+}
+
+#logo-list-item {
+    float: left;
+}
+
+#my-logo {
+    cursor: pointer;
+}
+
+#logo-anchor {
+    text-decoration: none;
+
 }
 
 #blog-button {

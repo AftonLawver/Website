@@ -5,7 +5,7 @@
         <link rel="stylesheet"  type = "text/css" href="style.css" />
         <meta charset = "utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="afton.png">
+        <link rel="icon" href="aftonlogo.png">
         <script src="https://kit.fontawesome.com/87d5d5aa71.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     </head>
@@ -13,11 +13,16 @@
         <div class="first_section">
             <header>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li id="logo-list-item">
+                        <a id="logo-anchor" href="index.html">
+                            <img id="my-logo" src="aftonblacklogo.png"
+                                 width="45" height="30" alt="my logo">
+                        </a>
+                    </li>
                     <li><a onclick="scrollToSection('aboutHeader')">About</a></li>
                     <li><a onclick="scrollToSection('projectsHeader')">Projects</a></li>
                     <li><a onclick="scrollToSection('contactHeader')">Contact</a></li>
-                    <li><a id = "blog-button" href="Blog/blog.html">View My Blog!</a></li>
+                    <li><a id="blog-button" href="Blog/blog.html">View My Blog!</a></li>
                 </ul>
             </header>
             <br>
