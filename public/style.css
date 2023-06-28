@@ -1,12 +1,73 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: opensans-bold sans-serif;
+    font-family: "Roboto", serif;
 }
 
 body, html {
-    background-color: #CCE5FF;
+    background-color: #fff;
+    color: #080808;
     margin: 0;
     height: 100%;
+}
+
+#header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(headshot.png);
+    background-size: cover;
+    background-position: left;
+}
+
+.container {
+    padding: 10px 10%;
+}
+
+.logo {
+    height: 75px;
+    width: 75px;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #549ABC;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 header {
