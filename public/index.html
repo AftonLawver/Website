@@ -14,14 +14,14 @@
             <div class="container">
                 <nav>
                     <img src="aftonlogo.png" class="logo">
-                    <ul>
+                    <ul id="sidemenu">
                         <li><a href="#">About</a></li>
                         <li><a href="#">Services</a></li>
                         <li><a href="#">Portfolio</a></li>
                         <li><a href="#">Contact</a></li>
-                        <i class="fa-solid fa-xmark"></i>
+                        <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
                     </ul>
-                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-bars" onclick="openMenu()"></i>
                 </nav>
                 <div class="header-text">
                     <p>Hi, my name is</p>
@@ -33,7 +33,7 @@
        <!-- -------------------about--------------- -->
         <div id="about">
             <div class="container">
-                <div class="row">
+                <div id="about-columns" class="row">
                     <div class="about-col-1">
                         <h1 class="sub-title">About Me</h1>
                         <p>

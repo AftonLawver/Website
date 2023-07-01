@@ -253,6 +253,15 @@ const opentab = function(tabName) {
     document.getElementById(tabName).classList.add("active-tab");
 }
 
+const sidemenu = document.getElementById("sidemenu");
+
+const openMenu = function() {
+    sidemenu.style.right = "0";
+}
+
+const closeMenu = function() {
+    sidemenu.style.right = "-200px";
+}
 //
 //
 //
