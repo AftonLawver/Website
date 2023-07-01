@@ -580,8 +580,8 @@ footer {
     text-align: center;
 }
 
-.footer > p{
-    padding: 40px 0px 40px 0px;
+.footer p{
+    padding: 0px 0 30px 0;
     font-size: 18px;
 }
 
@@ -590,13 +590,64 @@ footer {
     background: transparent;
     border: none;
     top: -20px;
-    color: #549ABC;
+    color: #ababab;
 }
 
 .scrollBtn:hover {
-    color: white;
+    color: #549ABC;
     cursor: pointer;
 }
+
+
+/*============== CSS for small screens ==================*/
+nav .fa-solid {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    #header {
+        background-image: url(phoneheadshot.png);
+        background-position: center;
+    }
+
+    .header-text {
+        margin-top: 100%;
+        font-size: 16px;
+    }
+
+    .header-text h1 {
+        font-size: 30px;
+
+    }
+
+    nav .fa-solid {
+        display: block;
+        font-size: 25px;
+    }
+
+    nav ul {
+        background: #549ABC;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+    }
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+
+    nav ul .fa-solid {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+}
+
+
 
 /*.about_section_two {*/
 /*    margin: 50px 90px 50px 90px;*/
