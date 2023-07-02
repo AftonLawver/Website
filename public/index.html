@@ -15,10 +15,11 @@
                 <nav>
                     <img src="aftonlogo.png" class="logo">
                     <ul id="sidemenu">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
                         <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
                     </ul>
                     <i class="fa-solid fa-bars" onclick="openMenu()"></i>
@@ -107,7 +108,7 @@
                     </div>
                     <div>
                         <i class="fa-solid fa-screwdriver-wrench"></i>
-                        <h2>Website Maintenance/Support</h2>
+                        <h2>Website Maintenance</h2>
                         <p>Description for the second service</p>
                         <a href="#">Learn more</a>
                     </div>
@@ -488,7 +489,9 @@
         <footer>
             <div class="footer">
                     <button class="scrollBtn"><i class="fa-solid fa-circle-up fa-3x" onclick="scrollToTop()"></i></button>
-                <p>Made by Afton Lawver</p>
+                <p>
+                    <span>© Copyright 2023 - </span><a href="#" id="footerName">Afton Lawver</a>
+                </p>
             </div>
         </footer>
 </html>
