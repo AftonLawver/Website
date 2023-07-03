@@ -5,7 +5,7 @@
         <link rel="stylesheet"  type = "text/css" href="style.css" />
         <meta charset = "utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="aftonlogo.png">
+        <link rel="icon" href="images/logos/aftonlogo.png">
         <script src="https://kit.fontawesome.com/87d5d5aa71.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     </head>
@@ -13,13 +13,13 @@
         <div id="header">
             <div class="container">
                 <nav>
-                    <img src="aftonlogo.png" class="logo">
+                    <img src="images/logos/aftonlogo.png" class="logo">
                     <ul id="sidemenu">
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="./Blog/blog.html">Blog</a></li>
                         <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
                     </ul>
                     <i class="fa-solid fa-bars" onclick="openMenu()"></i>
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                     <div class="about-col-2">
-                        <img src="trainpic.jpg">
+                        <img src="images/trainpic.jpg">
 
                     </div>
                 </div>
@@ -103,20 +103,20 @@
                     <div>
                         <i class="fa-solid fa-globe"></i>
                         <h2>Web App Development</h2>
-                        <p>Description for the first service</p>
-                        <a href="#">Learn more</a>
+                        <p>Website or web application development for any needs whether it be a business or just a personal website. </p>
+<!--                        <a href="#">Learn more</a>-->
                     </div>
                     <div>
                         <i class="fa-solid fa-screwdriver-wrench"></i>
-                        <h2>Website Maintenance</h2>
-                        <p>Description for the second service</p>
-                        <a href="#">Learn more</a>
+                        <h2>Website Support</h2>
+                        <p>Any maintenance or support needed for your website like website performance, domain name management, website hosting, mobile responsiveness.</p>
+<!--                        <a href="#">Learn more</a>-->
                     </div>
                     <div>
                         <i class="fa-solid fa-desktop"></i>
                         <h2>Desktop App Development</h2>
-                        <p>Description for the third service</p>
-                        <a href="#">Learn more</a>
+                        <p>Cross-platform desktop application development needs.</p>
+<!--                        <a href="#">Learn more</a>-->
                     </div>
                 </div>
             </div>
@@ -128,7 +128,7 @@
         <h1 class="sub-title">My Work</h1>
         <div class="work-list">
             <div class="work">
-                <img src="pomodoroTimer.png">
+                <img src="images/pomodoroTimer.png">
                 <div class="layer">
                     <h3>Pomodoro Timer</h3>
                     <p>Desktop app that monitors and tracks study time.</p>
@@ -136,7 +136,7 @@
                 </div>
             </div>
             <div class="work">
-                <img src="website.png">
+                <img src="images/website.png">
                 <div class="layer">
                     <h3>Personal Website</h3>
                     <p>Personal website built with the MEAN stack.</p>
@@ -144,28 +144,34 @@
                 </div>
             </div>
             <div class="work">
-                <img src="chat.png">
+                <img src="images/chat.png">
                 <div class="layer">
                     <h3>NodeChat</h3>
                     <p>A chat web application built with node.js</p>
                     <a href="#"><i class="fa-brands fa-github fa-xl"></i></i></a>
                 </div>
             </div>
-<!--            <div class="work">-->
-<!--                <img src="tasker.png">-->
-<!--                <div class="layer">-->
-<!--                    <h3>Tasker</h3>-->
-<!--                    <p>A task manager web application.</p>-->
-<!--                    <a href="#"><i class="fa-brands fa-github"></i></i></a>-->
-<!--                </div>-->
-<!--            </div>-->
+            <div class="work unseen">
+                <img src="images/tasker.png">
+                <div class="layer">
+                    <h3>Tasker</h3>
+                    <p>A task manager web application.</p>
+                    <a href="#"><i class="fa-brands fa-github fa-xl"></i></i></a>
+                </div>
+            </div>
+            <div class="work unseen">
+                <img src="images/logos/signaturelandmanagement.jpg">
+                <div class="layer">
+                    <h3>Signature Land Management Website</h3>
+                    <p>Website for a landscaping company</p>
+                    <a href="#"><i class="fa-brands fa-github fa-xl"></i></i></a>
+                </div>
+            </div>
         </div>
-
-        <a href="#" class="btn">See  more</a>
+        <a id="seeMoreButton" class="btn" onclick="seeMoreProjects()">See  more</a>
     </div>
 
 </div>
-
 
 <div class="contact">
     <div class="container">
@@ -187,6 +193,7 @@
                     <input type="email" name="email" placeholder="Your email" required>
                     <textarea name="Message" rows="6" placeholder="Your message"></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
+                    <input type="reset" name="clear" class="btn btn2" value="Clear Form"/>
                 </form>
             </div>
         </div>

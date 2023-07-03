@@ -262,6 +262,26 @@ const openMenu = function() {
 const closeMenu = function() {
     sidemenu.style.right = "-200px";
 }
+
+let projects = document.querySelectorAll(".unseen");
+let seeMoreButton = document.getElementById("seeMoreButton");
+
+const seeMoreProjects = function() {
+    if (seeMoreButton.textContent === "See Less") {
+        for (i = 0; i < projects.length; i++) {
+            projects[i].style.display = "none";
+        }
+        seeMoreButton.textContent = "See More"
+    }
+    else {
+        for (i = 0; i < projects.length; i++) {
+            projects[i].style.display = "block";
+        }
+        seeMoreButton.textContent = "See Less"
+    }
+
+
+}
 //
 //
 //

@@ -1,6 +1,7 @@
-![Logo of the Project](public/aftonlogo.png)
+![Logo of the Project](public/images/logos/aftonlogo.png)
 
 ---
+
 # Afton Lawver's Website
 Domain: **aftonlawver.com**
 ### Description
@@ -12,7 +13,11 @@ Domain: **aftonlawver.com**
 - Gives users the chance to read more about who I am and what my interests are. 
 
 ### Features in Progress
-- None at the moment.
+- Make responsive for all devices, instead of using multiple images for header background for each size.
+- Convert blog to updated theme.
+- Convert popup to updated theme.
+- Recode the form submission to connect to database based on new theme/schema.
+- Add angular functionality to the form (validation).
 
 ### File Structure
 - I have many directories that my website files are kept in: 
