@@ -13,14 +13,9 @@ router.use(bodyParser.json());
 router.post('/', async (req, res) => {
     let data = req.body;
     console.log(data);
-    let name = data['Name'];
-    let email = data['Email'];
-    let address = data['Address'];
-    let city = data['City'];
-    let state = data['State'];
-    let zipcode = data['Zipcode'];
-    let phone = data['Phone'];
-    let comments = data['Comments'];
+    let name = data["Name"];
+    let email = data["Email"];
+    let message = data["Message"];
 
     const client = new MongoClient(dbURI);
     const database = client.db("website-info");
@@ -30,12 +25,7 @@ router.post('/', async (req, res) => {
     const user = new User({
         name: name,
         email: email,
-        address: address,
-        city: city,
-        state: state,
-        zipcode: zipcode,
-        phone: phone,
-        comments: comments
+        message: message
     });
     user.save()
         .then(() => {
@@ -48,13 +38,13 @@ router.post('/', async (req, res) => {
 
 router.post('/send', async (req, res) => {
 
-    let name = req.body['Name'];
-    let email = req.body['Email'];
+    let name = req.body["Name"];
+    let email = req.body["Email"];
 
     const output = `
             <h4>Dear ${name},</h4>
-            <p>Thanks for your feedback!</p>
-            <p>Best,\nAfton Lawver</p>
+            <p>Thanks for your feedback on my website!</p>
+            <p>Best,<br>Afton Lawver</p>
         `
     const myOAuth2Client = new OAuth2(
         process.env.OAUTH_CLIENTID,

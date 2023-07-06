@@ -9,22 +9,7 @@ const userSchema = new Schema({
     email: {
         type: String
     },
-    address: {
-        type: String
-    },
-    city: {
-        type: String
-    },
-    state: {
-        type: String
-    },
-    zipcode: {
-        type: String
-    },
-    phone: {
-        type: String
-    },
-    comments: {
+    message: {
         type: String
     }
 }, { timestamps: true, versionKey: false });
