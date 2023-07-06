@@ -10,34 +10,7 @@ const OAuth2 = google.auth.OAuth2;
 router.use(express.json());
 router.use(bodyParser.json());
 
-router.post('/', async (req, res) => {
-    let data = req.body;
-    console.log(data);
-    let name = data["Name"];
-    let email = data["Email"];
-    let message = data["Message"];
-
-    const client = new MongoClient(dbURI);
-    const database = client.db("website-info");
-    const users = database.collection("users");
-    const estimate = users.estimatedDocumentCount();
-
-    const user = new User({
-        name: name,
-        email: email,
-        message: message
-    });
-    user.save()
-        .then(() => {
-            res.send({message: estimate});
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-});
-
-router.post('/send', async (req, res) => {
-
+router.post('/email', async (req, res) => {
     let name = req.body["Name"];
     let email = req.body["Email"];
 
