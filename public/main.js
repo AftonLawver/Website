@@ -7,27 +7,33 @@
 //
 function openPopUp(documents) {
     let popup = window.open('popup.html')
-    popup.onload = function() {
-        const lastDigitString = String(documents).slice(-1);
-        const lastDigitInt = Number(lastDigitString);
-        const secondToLastDigitString = String(documents).slice(-2);
-        const secondToLastDigitInt = Number(secondToLastDigitString);
-        if (secondToLastDigitInt === 1) {
-            popup.document.getElementById('number-suffix').innerHTML = 'th';
-        }
-        else if (lastDigitInt === 1) {
-            popup.document.getElementById('number-suffix').innerHTML = 'st';
-        }
-        else if (lastDigitInt === 2) {
-            popup.document.getElementById('number-suffix').innerHTML = 'nd';
-        }
-        else if (lastDigitInt === 3) {
-            popup.document.getElementById('number-suffix').innerHTML = 'rd';
-        }
-        else {
-            popup.document.getElementById('number-suffix').innerHTML = 'th';
-        }
-        popup.document.getElementById('number').innerHTML = documents;
+
+    if (popup) {
+        popup.onload = function() {
+            const lastDigitString = String(documents).slice(-1);
+            const lastDigitInt = Number(lastDigitString);
+            const secondToLastDigitString = String(documents).slice(-2);
+            const secondToLastDigitInt = Number(secondToLastDigitString);
+            if (secondToLastDigitInt === 1) {
+                popup.document.getElementById('number-suffix').innerHTML = 'th';
+            }
+            else if (lastDigitInt === 1) {
+                popup.document.getElementById('number-suffix').innerHTML = 'st';
+            }
+            else if (lastDigitInt === 2) {
+                popup.document.getElementById('number-suffix').innerHTML = 'nd';
+            }
+            else if (lastDigitInt === 3) {
+                popup.document.getElementById('number-suffix').innerHTML = 'rd';
+            }
+            else {
+                popup.document.getElementById('number-suffix').innerHTML = 'th';
+            }
+            popup.document.getElementById('number').innerHTML = documents;
+        };
+    } else {
+        // Handle error when the popup could not be opened
+        console.error('Failed to open popup window');
     }
 }
 
