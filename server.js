@@ -1,3 +1,4 @@
+var sslRedirect = require('heroku-ssl-redirect');
 const express = require("express");
 const app = express();
 require('dotenv').config();
@@ -15,6 +16,8 @@ const OAuth2 = google.auth.OAuth2;
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(sslRedirect());
 
 // Set a static folder
 app.use(express.static(path.join(__dirname, 'public')));
