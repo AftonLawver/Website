@@ -109,7 +109,8 @@ app.post('/send', async (req, res) => {
       res.send({
         message: err
       })
-    } else {
+    }
+    else {
       transporter.close();
       const client = new MongoClient(dbURI);
       const database = client.db("website-info");

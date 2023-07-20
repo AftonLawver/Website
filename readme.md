@@ -15,9 +15,8 @@ Domain: **aftonlawver.com**
 ### Features in Progress
 - Make responsive for all devices, instead of using multiple images for header background for each size.
 - Convert blog to updated theme.
-- Convert popup to updated theme.
-- Recode the form submission to connect to database based on new theme/schema.
 - Add angular functionality to the form (validation).
+- Decouple the api routes from the server (put them in their own separate file and use them as a microservice)
 
 ### File Structure
 - I have many directories that my website files are kept in: 
