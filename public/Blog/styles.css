@@ -134,3 +134,14 @@ footer, figcaption {
 .content h3 {
     font-weight: bold;
 }
+
+@media only screen and (max-width: 415px) {
+
+    body {
+        font-family:"Palatino Linotype";
+        margin-left:25px;
+        margin-right:25px;
+        color: #111;
+    }
+}
+
