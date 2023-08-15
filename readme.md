@@ -16,7 +16,8 @@ Domain: **aftonlawver.com**
 - Make responsive for all devices, instead of using multiple images for header background for each size.
 - Convert blog to updated theme.
 - Add angular functionality to the form (validation).
-- Decouple the api routes from the server (put them in their own separate file and use them as a microservice)
+- Decouple the api routes from the server (put them in their own separate file and use them as a microservice).
+- Update resume to reflect new position.
 
 ### File Structure
 - I have many directories that my website files are kept in: 

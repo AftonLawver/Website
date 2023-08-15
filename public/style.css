@@ -102,7 +102,7 @@ header {
 /*------------ services --------------*/
 
 #services {
-     padding: 30px 0;
+     padding: 20px 0;
 }
 
 .services-list {
@@ -312,7 +312,7 @@ form .btn2 {
 
 /* ----------------about-------------- */
 #about {
-    padding: 80px 0px;
+    padding: 20px 0px;
     color: #d3d3d3;
 }
 
@@ -426,7 +426,7 @@ nav .fa-solid {
     display: none;
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (min-width: 291px) and (max-width: 414px) {
     #header {
         background-image: url(images/iphoneSE.png);
         background-position: center;
@@ -436,7 +436,6 @@ nav .fa-solid {
         height: 40px;
         width: 40px;
     }
-
 
     .header-text {
         margin-top: 25%;
@@ -502,9 +501,12 @@ nav .fa-solid {
         flex-basis: 100%;
     }
 
-    .about-col-2 {
-        margin-bottom: 40px;
+    .about-col-1 {
+        padding-top: 20px;
+    }
 
+    .about-col-2 > img{
+        padding-bottom: 6vw;
     }
 
     #about-columns {
@@ -513,6 +515,10 @@ nav .fa-solid {
 
     .about-col-1 {
         font-size: 14px;
+    }
+
+    .container {
+        align-items: center;
     }
 
     .tab-links {
@@ -537,19 +543,18 @@ nav .fa-solid {
     }
 
     .header-text {
-        margin-top: 90%;
+        margin-top: 50%;
         font-size: 18px;
         text-align: right;
     }
 
     .header-text h1 {
-        font-size: 55px;
-
+        font-size: 35px;
     }
 
     nav .fa-solid {
         display: block;
-        font-size: 35px;
+        font-size: 15px;
     }
 
     nav ul {
@@ -621,11 +626,15 @@ nav .fa-solid {
         flex-basis: 100%;
     }
 
+    .container {
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media only screen and (max-width: 290px) {
     #header {
-        background-image: url(./images/iphoneSE.png);
+        background-image: url(./images/iphoneSETransparent.png);
         background-position: center;
     }
 
@@ -640,13 +649,8 @@ nav .fa-solid {
         text-align: left;
     }
 
-    #about {
-        padding: 40px 0 10px 0;
-    }
-
     .header-text h1 {
         font-size: 32px;
-
     }
 
     nav .fa-solid {
@@ -700,7 +704,7 @@ nav .fa-solid {
 
     .about-col-1, .about-col-2 {
         flex-basis: 100%;
-
+        padding: 10px 5%;
     }
 
     .about-col-2 {
