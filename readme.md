@@ -18,6 +18,7 @@ Domain: **aftonlawver.com**
 - Add angular functionality to the form (validation).
 - Decouple the api routes from the server (put them in their own separate file and use them as a microservice).
 - Update resume to reflect new position.
+- Build a separate contact form that uses Angular
 
 ### File Structure
 - I have many directories that my website files are kept in: 
