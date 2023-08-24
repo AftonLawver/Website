@@ -26,8 +26,7 @@ body, html {
 
 #header {
     width: 100%;
-
-    background-image: url(headshotForDesktop.png);
+    background-image: url(images/headshotForDesktop.png);
     background-size: cover;
     background-position: left;
 }
