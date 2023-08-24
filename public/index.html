@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Afton Lawver</title>
+        <title>Freelance Web Developer in Chicago, IL | Afton Lawver</title>
         <link rel="stylesheet"  type = "text/css" href="style.css" />
         <meta charset = "utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,7 +18,7 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#" onclick="scrollToBottomOfPage();">Contact</a></li>
                         <span id="divider-line">|</span>
                         <span id="divider-line-2"><hr></span>
                         <li><a href="./Blog/blog.html">Blog</a></li>
@@ -30,18 +30,22 @@
                     <p>Hi, my name is</p>
                     <h1>Afton Lawver</h1>
                     <p>Freelance Web Developer in Chicago</p>
-                </div>
-                <div class="header-img">
-                    <img src="images/headshot3.png" class="headshot">
+<!--                    For new contact page-->
+<!--                    onclick="location.href='contact.html'-->
+                    <button type="button" id="get-in-touch-button" onclick="scrollToBottomOfPage()">Get in touch</button>
+                    <div class="headshot-img">
+                        <img id="headshot-img" src="images/headshotForMobile.png">
+                    </div>
                 </div>
             </div>
+
         </div>
        <!-- -------------------about--------------- -->
         <div id="about">
             <div class="container">
                 <div id="about-columns" class="row">
                     <div class="about-col-1">
-                        <h1 class="sub-title">About Me</h1>
+                        <h1 class="sub-title">About</h1>
                         <p>
                             I didn't grow up loving tech. I did, however, grow up taking things apart and putting them back together just for the fun of it to see how they work.
                         </p>
@@ -129,7 +133,7 @@
 <!--        =========== Portfolio ==============-->
 <div id="portfolio">
     <div class="container">
-        <h1 class="sub-title">My Work</h1>
+        <h1 class="sub-title">Recent Projects</h1>
         <div class="work-list">
             <div class="work">
                 <img src="images/pomodoroTimer.png">
@@ -197,7 +201,7 @@
                     <input type="email" id="email" placeholder="Your email" required>
                     <textarea id="message" rows="6" placeholder="Your message"></textarea>
                     <button id="submitButton" type="button" class="btn btn2">Submit</button>
-                    <input type="reset" name="clear" class="btn btn2" value="Clear Form"/>
+                    <input id="resetButton" type="reset" name="clear" class="btn btn2" value="Clear Form"/>
                 </form>
             </div>
         </div>

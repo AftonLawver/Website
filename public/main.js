@@ -209,8 +209,10 @@ const seeMoreProjects = function() {
         }
         seeMoreButton.textContent = "See Less"
     }
+}
 
-
+const scrollToBottomOfPage = function() {
+    window.scrollTo(0, document.body.scrollHeight);
 }
 //
 //
