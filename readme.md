@@ -13,13 +13,13 @@ Domain: **aftonlawver.com**
 - Gives users the chance to read more about who I am and what my interests are. 
 
 ### Features in Progress
-- Make responsive for all devices, instead of using multiple images for header background for each size.
 - Convert blog to updated theme.
 - Add angular functionality to the form (validation).
 - Decouple the api routes from the server (put them in their own separate file and use them as a microservice).
-- Update resume to reflect new position.
+- Update resume to reflect new position. 
 - Build a separate contact form that uses Angular
-- Make frozen menu navigation bar.
+- Make navbar slide back when user clicks in space that is not the navbar on mobile.
+- 
 
 ### File Structure
 - I have many directories that my website files are kept in: 

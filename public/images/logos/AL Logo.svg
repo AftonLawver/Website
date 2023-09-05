@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1466.72 1466.72">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #549abc;
+        stroke-miterlimit: 10;
+        stroke-width: 30px;
+      }
+
+      .cls-2 {
+        font-size: 689.83px;
+      }
+
+      .cls-2, .cls-3 {
+        font-family: ArialNarrow-Bold, 'Arial Narrow';
+        font-weight: 700;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: #549abc;
+      }
+
+      .cls-3 {
+        font-size: 689.83px;
+      }
+
+      .cls-4 {
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="cls-4" d="m848.68,1084.27c-5.49,0-9.89-4.39-10.99-9.89l-16.48-185.64h-287.8l-101.06,186.74c-2.2,5.49-8.79,8.79-14.28,8.79h-160.38c-4.39,0-7.69-4.39-4.39-8.79l433.9-751.36c3.3-5.49,9.89-8.79,15.38-8.79h205.41c5.49,0,9.89,4.39,10.99,9.89l81.29,749.16c1.1,5.49-3.29,9.89-8.79,9.89h-142.8Zm-38.45-328.44l-29.66-328.44-175.76,328.44h205.42Z"/>
+    <path class="cls-4" d="m926.86,960.15h311.97c5.49,0,8.79,4.39,7.69,9.89l-24.17,104.36c-1.1,5.49-6.59,9.89-12.08,9.89h-328.73c-5.49,0,2.77-4.38,3.87-9.87"/>
+  </g>
+  <circle class="cls-1" cx="733.36" cy="733.36" r="718.36"/>
+  <text class="cls-2" transform="translate(106.36 907.2) scale(.53 1)"><tspan x="0" y="0">&lt;</tspan></text>
+  <text class="cls-3" transform="translate(1360.37 907.2) rotate(-180) scale(.53 -1)"><tspan x="0" y="0">&lt;</tspan></text>
+</svg>

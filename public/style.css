@@ -59,6 +59,10 @@ body, html {
     flex-direction: column;
 }
 
+#logo:hover {
+    opacity: 0.8;
+}
+
 .logo {
     margin-top: 10px;
     height: 60px;
@@ -271,6 +275,12 @@ header {
     display: none;
 }
 
+.btn .btn3 {
+    background-color: black;
+}
+
+
+
 
 /*================ contact =================*/
 
@@ -321,6 +331,17 @@ header {
 
 .btn.btn2:hover {
     background: #437f9d;
+}
+
+.btn.btn3 {
+    display: inline-block;
+    background: black;
+}
+
+.btn.btn3:hover {
+    opacity: 0.85;
+    background: #ababab;
+    color: black;
 }
 
 .contact-right form {
@@ -622,6 +643,7 @@ nav .fa-solid {
         flex-basis: 60%;
     }
 }
+
 
 
 
