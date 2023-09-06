@@ -1,4 +1,4 @@
-![Logo of the Project](public/images/logos/aftonlogo.png)
+![Logo of the Project](public/images/logos/AL%20Logo.png)
 
 ---
 
@@ -16,7 +16,6 @@ Domain: **aftonlawver.com**
 - Convert blog to updated theme.
 - Add angular functionality to the form (validation).
 - Decouple the api routes from the server (put them in their own separate file and use them as a microservice).
-- Update resume to reflect new position. 
 - Build a separate contact form that uses Angular
 - Make navbar slide back when user clicks in space that is not the navbar on mobile.
 - 
