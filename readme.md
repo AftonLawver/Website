@@ -10,15 +10,17 @@ Domain: **aftonlawver.com**
 ### Features
 - Allows users to submit feedback/contact information within the contact section of my website.
 - Gives users the chance to connect with me by visiting my LinkedIn or GitHub page.
-- Gives users the chance to read more about who I am and what my interests are. 
+- Gives users the chance to read more about who I am and what my interests are.
+- Gives me the opportunity to showcase my portfolio of work.
 
 ### Features in Progress
 - Convert blog to updated theme.
 - Add angular functionality to the form (validation).
 - Decouple the api routes from the server (put them in their own separate file and use them as a microservice).
-- Build a separate contact form that uses Angular
+- Build a separate contact form that uses AngularJS on separate html page.
 - Make navbar slide back when user clicks in space that is not the navbar on mobile.
-- 
+- Make contact form email me when user submits it. 
+- Implement better validation on contact form.
 
 ### File Structure
 - I have many directories that my website files are kept in: 
