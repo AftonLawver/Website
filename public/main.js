@@ -1,10 +1,3 @@
-//
-// const app = angular.module('myapp', []);
-//
-// app.controller('angularctrl', function ($scope) {
-//
-// });
-//
 function openPopUp(documents) {
     let popup = window.open('popup.html')
 
@@ -56,34 +49,6 @@ submitButton.addEventListener('click', () => {
     }).catch(error => console.log(error));
 });
 
-// function isUserNew() {
-//     const data = getAllData();
-//     const options = {
-//         method: 'GET',
-//         headers: {
-//             'Content-Type': "application/json"
-//         },
-//     }
-//     fetch('/', options)
-//         .then(response => {
-//             if (response.ok) {
-//                 if (response.statusMessage == null) {
-//                     console.log("email does not exist yet.")
-//                     return true;
-//                 }
-//                 else {
-//                     console.log("email already exists.")
-//                     return false;
-//                 }
-//             }
-//             else {
-//                 console.log("Response not okay. (i.e. != 200-299.");
-//             }
-//         }).catch(err => {
-//         console.log(err)
-//     })
-//     return true;
-// }
 function validateForm() {
     if (validateName() && validateEmail()) {
             const data = getAllData();
@@ -214,9 +179,3 @@ const seeMoreProjects = function() {
 const scrollToBottomOfPage = function() {
     window.scrollTo(0, document.body.scrollHeight);
 }
-//
-//
-//
-//
-//
-//

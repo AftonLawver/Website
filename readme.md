@@ -3,7 +3,7 @@
 ---
 
 # Afton Lawver's Website
-Domain: **aftonlawver.com**
+Domain: [aftonlawver.com](https://www.aftonlawver.com)
 ### Description
 - My website is a single-paged website. It has all sections listed at the top which are clickable.
 
@@ -14,10 +14,8 @@ Domain: **aftonlawver.com**
 - Gives me the opportunity to showcase my portfolio of work.
 
 ### Features in Progress
-- Convert blog to updated theme.
-- Add angular functionality to the form (validation).
+- Build blog with login capability.
 - Decouple the api routes from the server (put them in their own separate file and use them as a microservice).
-- Build a separate contact form that uses AngularJS on separate html page.
 - Make navbar slide back when user clicks in space that is not the navbar on mobile.
 - Make contact form email me when user submits it. 
 - Implement better validation on contact form.
